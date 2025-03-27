@@ -1,0 +1,79 @@
+/* Fullpage styling */
+.App {
+  overflow: hidden !;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.section {
+  height: auto !important;
+  width: 100vw;
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Navigation dots */
+.nav-dots {
+  position: fixed;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 10px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.nav-dot.active {
+  background-color: white;
+  transform: scale(1.3);
+  border-color: white;
+}
+
+/* Hide scrollbar */
+html, body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Navbar styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+@media (max-width: 768px) {
+  .nav-dots {
+    right: 15px;
+  }
+  
+  .nav-dot {
+    width: 10px;
+    height: 10px;
+    margin: 8px 0;
+  }
+}

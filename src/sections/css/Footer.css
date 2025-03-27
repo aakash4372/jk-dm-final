@@ -1,0 +1,8 @@
+/* In Footer.css */
+footer.footer h1 {
+    font-family: var(--fontfamily3) !important;
+  }
+
+  footer .service{
+    font-family: var(--fontfamily3);
+  }

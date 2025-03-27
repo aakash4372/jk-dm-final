@@ -1,0 +1,120 @@
+.whatwedo-section {
+    background-color: #f8d5ed63;
+    padding: 60px 0;
+    height: auto !important;
+  }
+  
+  /* Falling Text Animation */
+  .falling-text-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 30px;
+  }
+  .whatwedo-section h4{
+    font-family: var(--fontfamily4);
+  }
+  .falling-box {
+    color: black;
+    padding: 8px 12px;
+    border-radius: 30px;
+    margin: 5px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: var(--fontfamily3);
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease-in-out;
+  }
+  .what-we-do-p {
+    background-color: red;
+    font-size: 14px !important;
+    color: white !important; /* Optional: Ensures text is visible on red background */
+    padding: 5px 20px; /* Optional: Adds some spacing */
+    display: inline-block; /* Ensures the background wraps around the text */ /* Optional: Adds rounded corners */
+    font-family: var(--fontfamily3) !important;
+  }
+  
+  /* Responsive Image */
+  .whatwedo-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Section Titles */
+  .whatwedo-section h2 {
+    font-size: 3.6rem;
+    font-weight: 700;
+    font-family: var(--fontfamily3);
+    color: var(--primecolor);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .whatwedo-section p {
+    font-size: 1.3rem;
+    font-family: var(--fontfamily3);
+    color: var(--secondarycolor);
+    line-height: 1.7;
+    text-align: justify;
+  }
+  
+  /* Responsive Media Queries */
+  @media (max-width: 992px) {
+    .falling-box {
+      font-size: 1.2rem;
+      padding: 8px 15px;
+    }
+  
+    .falling-text-container {
+      gap: 8px;
+    }
+  
+    .whatwedo-section h2 {
+      font-size: 2.8rem;
+    }
+  
+    .whatwedo-section p {
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .falling-box {
+      font-size: 1rem;
+      padding: 6px 12px;
+    }
+  
+    .falling-text-container {
+      gap: 5px;
+    }
+  
+    .whatwedo-section h2 {
+      font-size: 2rem;
+      text-align: start;
+    }
+  
+    .whatwedo-section p {
+      font-size: 1rem;
+      text-align: start;
+    }
+  
+    .whatwedo-img {
+      max-width: 80%; /* Reduce image size on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .whatwedo-img {
+      max-width: 50% !important;
+    }
+  
+    .falling-box {
+      padding: 5px 5px;
+    }
+  }
+  

@@ -1,0 +1,39 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+/* Fix for fixed navbar */
+.fp-nav {
+    z-index: 999;
+  }
+
+  .fp-watermark {
+    display: none !important;
+}
+
+  
+  /* Fullpage section styling */
+  .section {
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  /* Override fullpage.js nav colors */
+  #fp-nav ul li a span, 
+  .fp-slidesNav ul li a span {
+    background: white;
+  }
+  
+  /* #fp-nav ul li a.active span, 
+  .fp-slidesNav ul li a.active span, 
+  #fp-nav ul li:hover a.active span, 
+  .fp-slidesNav ul li:hover a.active span {
+    background: #f6f33b;
+    border-color: #3b82f6;
+  }
+   */
+
+   /* Hide scrollbar for all browsers */
+html,body {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
