@@ -138,6 +138,19 @@
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
     z-index: 2;
 }
+/* LG Screens (992px and up) */
+@media (min-width: 992px) {
+    .hero-section img {
+        max-width: 80% !important; /* Adjust this percentage as needed */
+    }
+}
+
+/* XL Screens (1200px and up) - if you want even smaller on very large screens */
+@media (min-width: 1200px) {
+    .hero-section img {
+        max-width: 70% !important; /* Further reduce if needed */
+    }
+}
 
 /* Responsive adjustments */
 @media (max-width: 992px) {
