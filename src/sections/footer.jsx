@@ -1,18 +1,25 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./css/Footer.css";
+import InstagramIcon from "./serviceimage/instagram.png";
+import YouTubeIcon from "./serviceimage/youtube.png";
+import FacebookIcon from "./serviceimage/facebook.png";
 
 const Footer = () => {
   return (
-    <footer className=" section bg-[#3e495b] text-white py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-8 lg:px-16">
+    <footer className="section bg-[#3e495b] text-white py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-8 lg:px-16">
       <div className="container mx-auto">
         {/* Hero Section */}
         <div className="mb-10 md:mb-12 lg:mb-16 text-center md:text-left service">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold  mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold mb-4">
             Design, Development<br className="hidden sm:block" /> and Marketing
           </h1>
-          <button className="bg-white text-red-600 font-semibold py-2 px-6 sm:px-8 rounded-lg hover:bg-gray-200 transition text-sm sm:text-base md:text-lg">
+          <Link 
+            to="/contact" 
+            className="inline-block bg-white text-red-600 font-semibold py-2 px-6 sm:px-8 rounded-lg hover:bg-gray-200 transition text-sm sm:text-base md:text-lg"
+          >
             Get Started
-          </button>
+          </Link>
         </div>
 
         {/* Grid Links */}
@@ -23,13 +30,21 @@ const Footer = () => {
               Company
             </h3>
             <ul className="space-y-2 sm:space-y-3">
-              {['Home', 'Services', 'Contact'].map((item) => (
-                <li key={item}>
-                  <a href="#" className="hover:underline text-sm sm:text-base md:text-[15px] lg:text-base">
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <Link to="/" className="hover:underline text-sm sm:text-base md:text-[15px] lg:text-base">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="hover:underline text-sm sm:text-base md:text-[15px] lg:text-base">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:underline text-sm sm:text-base md:text-[15px] lg:text-base">
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -39,11 +54,22 @@ const Footer = () => {
               Services
             </h3>
             <ul className="space-y-2 sm:space-y-3">
-              {["graphic designing", "video editing", "motion graphic", "digital marketing", "magazine designing", "website development", "branding"].map((service) => (
+              {[
+                "Graphic Designing",
+                "Video Editing",
+                "Motion Graphic",
+                "Digital Marketing",
+                "Magazine Designing",
+                "Website Development",
+                "Branding"
+              ].map((service) => (
                 <li key={service}>
-                  <a href="#" className="hover:underline text-sm sm:text-base md:text-[15px] lg:text-base">
-                    {service}
-                  </a>
+                  <Link 
+                    to="/services" 
+                    className="hover:underline text-sm sm:text-base md:text-[15px] lg:text-base capitalize"
+                  >
+                    {service.toLowerCase()}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -58,16 +84,16 @@ const Footer = () => {
               <div>
                 <p className="text-sm sm:text-base md:text-[15px] lg:text-base mb-1">Call Us Directly</p>
                 <a 
-                  href="tel:+916381035430 " 
+                  href="tel:+916381035430" 
                   className="font-bold text-lg sm:text-xl md:text-xl hover:underline block"
                 >
-                  +91 63810 35430 
+                  +91 63810 35430
                 </a>
                 <a 
-                  href="tel:+919791542153 " 
+                  href="tel:+919791542153" 
                   className="font-bold text-lg sm:text-xl md:text-xl hover:underline block"
                 >
-                  +91 97915 42153 
+                  +91 97915 42153
                 </a>
               </div>
               <div>
@@ -88,19 +114,27 @@ const Footer = () => {
               Follow Us
             </h3>
             <div className="flex space-x-4 sm:space-x-5">
-              {[ 'instagram', 'youtube','facebook'].map((platform) => (
-                <a 
-                  key={platform} 
-                  href="#" 
-                  className="hover:opacity-75 transition-opacity"
-                >
-                  <img 
-                    src={`img/${platform}.png`} 
-                    alt={platform} 
-                    className="h-7 sm:h-8 md:h-9" 
-                  />
-                </a>
-              ))}
+              <a href="#" className="hover:opacity-75 transition-opacity">
+                <img 
+                  src={InstagramIcon} 
+                  alt="Instagram" 
+                  className="h-7 sm:h-8 md:h-9" 
+                />
+              </a>
+              <a href="#" className="hover:opacity-75 transition-opacity">
+                <img 
+                  src={YouTubeIcon} 
+                  alt="YouTube" 
+                  className="h-7 sm:h-8 md:h-9" 
+                />
+              </a>
+              <a href="#" className="hover:opacity-75 transition-opacity">
+                <img 
+                  src={FacebookIcon} 
+                  alt="Facebook" 
+                  className="h-7 sm:h-8 md:h-9" 
+                />
+              </a>
             </div>
           </div>
         </div>

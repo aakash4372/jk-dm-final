@@ -3,39 +3,47 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "react-bootstrap";
 import { motion, useInView } from "framer-motion";
 import './css/HeroSection.css';
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const heroRef = useRef(null);
   const isInView = useInView(heroRef, { triggerOnce: true, margin: "-10px" });
 
+  const scrollToOurStory = () => {
+    const ourStorySection = document.getElementById('our-story');
+    if (ourStorySection) {
+      ourStorySection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   // Generate 60 bubbles with randomized properties
   const bubbles = Array.from({ length: 60 }).map((_, i) => {
-    const size = Math.random() * 20 + 10; // 10-30px size
+    const size = Math.random() * 20 + 10;
     const delay = Math.random() * 10;
-    const duration = Math.random() * 25 + 15; // 15-40s duration
+    const duration = Math.random() * 25 + 15;
     const top = Math.random() * 100;
     const left = Math.random() * 100;
-    const opacity = Math.random() * 0.6 + 0.2; // 0.2-0.8 opacity
+    const opacity = Math.random() * 0.6 + 0.2;
     
-    // Vibrant color palette
     const colors = [
-      'rgba(154, 74, 156, OPACITY)', // Purple
-      'rgba(192, 68, 153, OPACITY)', // Pink
-      'rgba(62, 73, 91, OPACITY)', // Navy
-      'rgba(255, 107, 107, OPACITY)', // Coral
-      'rgba(75, 192, 192, OPACITY)', // Teal
-      'rgba(255, 206, 86, OPACITY)', // Yellow
-      'rgba(54, 162, 235, OPACITY)', // Blue
-      'rgba(153, 102, 255, OPACITY)' // Lavender
+      'rgba(154, 74, 156, OPACITY)',
+      'rgba(192, 68, 153, OPACITY)',
+      'rgba(62, 73, 91, OPACITY)',
+      'rgba(255, 107, 107, OPACITY)',
+      'rgba(75, 192, 192, OPACITY)',
+      'rgba(255, 206, 86, OPACITY)',
+      'rgba(54, 162, 235, OPACITY)',
+      'rgba(153, 102, 255, OPACITY)'
     ];
     const color = colors[Math.floor(Math.random() * colors.length)].replace('OPACITY', opacity);
     
-    // Random movement direction (left/right)
     const xMovement = Math.random() > 0.5 ? 
       Math.random() * 100 + 50 : 
       Math.random() * -100 - 50;
     
-    // Random animation style
     const animationType = Math.random() > 0.7 ? 'float2' : 'float';
     
     return (
@@ -62,14 +70,12 @@ const HeroSection = () => {
 
   return (
     <div className="section hero-section" ref={heroRef}>
-      {/* Bubbles background */}
       <div className="bubbles-background">
         {bubbles}
       </div>
       
       <div className="container py-4">
         <div className="row align-items-center">
-          {/* Image Section */}
           <motion.div
             className="col-12 col-md-6 order-md-2 d-flex justify-content-center align-items-center"
             initial={{ opacity: 0, scale: 0.7 }}
@@ -82,7 +88,7 @@ const HeroSection = () => {
               className="img-fluid hero-image"
               style={{ 
                 width: '100%',
-                maxWidth: '800px',
+                maxWidth: '700px',
                 height: 'auto',
                 zIndex: 2,
                 position: 'relative'
@@ -90,7 +96,6 @@ const HeroSection = () => {
             />
           </motion.div>
 
-          {/* Text and Button Section */}
           <div className="col-12 col-md-6 order-md-1 text-center text-md-start mt-4 mt-md-0">
             <motion.h4
               className="fw-bold display-3 animated-text"
@@ -119,7 +124,7 @@ const HeroSection = () => {
               transition={{ delay: 0.6, duration: 0.7 }}
               style={{ position: 'relative', zIndex: 2 }}
             >
-             Let your brand’s journey begins.
+              Let your brand's journey begin.
             </motion.p>
 
             <motion.div
@@ -128,8 +133,12 @@ const HeroSection = () => {
               transition={{ delay: 0.9, duration: 0.7 }}
               style={{ position: 'relative', zIndex: 2 }}
             >
-              <Button className="custom-btn mb-3">
-                <span className="btn-text">Get Started</span>
+              <Button 
+              as={Link} to="/services"
+                className="custom-btn mb-3"
+                onClick={scrollToOurStory}
+              >
+                <span className="btn-text">know more</span>
               </Button>
             </motion.div>
           </div>

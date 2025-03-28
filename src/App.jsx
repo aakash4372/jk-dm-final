@@ -10,22 +10,22 @@ import OurStory from './sections/Ourstory';
 import Whatwedo from './sections/Whatwedo';
 import Footer from './sections/footer';
 import ServicePage from './sections/ServicePage';
+import ContactForm from './sections/Contactform';
 
-const FullpageWrapper = () => (
+const Fullpage = () => (
   <ReactFullpage
-    licenseKey={'YOUR_KEY_HERE'}
     scrollingSpeed={1000}
     navigation
     navigationPosition="right"
-    anchors={['home', 'about', 'contact']}
+    anchors={['home', 'our-story', 'what-we-do', 'explore-us', 'footer']}
     render={({ state, fullpageApi }) => {
       return (
         <ReactFullpage.Wrapper>
           <HomeSection />
-          <OurStory/>
-          <Whatwedo/>
+          <OurStory />
+          <Whatwedo />
           <AboutSection />
-          <Footer/>
+          <Footer />
         </ReactFullpage.Wrapper>
       );
     }}
@@ -39,8 +39,9 @@ function App() {
         <Navbar />
         <Cursor/>
         <Routes>
-          <Route path="/" element={<FullpageWrapper />} />
-          <Route path="/services/:serviceName" element={<ServicePage />} />
+          <Route path="/" element={<Fullpage />} />
+          <Route path="/services" element={<ServicePage />} />
+          <Route path="/contact" element={<ContactForm/>}/>
         </Routes>
       </div>
     </Router>

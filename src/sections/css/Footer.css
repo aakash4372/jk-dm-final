@@ -6,3 +6,65 @@ footer.footer h1 {
   footer .service{
     font-family: var(--fontfamily3);
   }
+
+  @media (min-width: 320px) and (max-width: 425px) {
+    footer {
+      padding: 20px;
+    }
+  
+    footer .service h1 {
+      font-size: 1.8rem !important;
+      text-align: center;
+      line-height: 1.4;
+    }
+  
+    footer .service button {
+      font-size: 14px !important;
+      padding: 8px 16px;
+    }
+  
+    /* Adjusting the grid layout */
+    footer .grid {
+      grid-template-columns: 1fr !important;
+      gap: 20px;
+      text-align: center;
+    }
+  
+    footer .service h3 {
+      font-size: 1.5rem !important;
+      text-align: center;
+    }
+  
+    footer .service ul {
+      padding: 0;
+      list-style: none;
+    }
+  
+    footer .service ul li a {
+      font-size: 14px !important;
+    }
+  
+    /* Adjusting the contact section */
+    footer .service div p {
+      font-size: 14px !important;
+    }
+  
+    footer .service div a {
+      font-size: 16px !important;
+    }
+  
+    /* Adjusting social icons */
+    footer .service .flex {
+      justify-content: center;
+    }
+  
+    footer .service .flex a img {
+      height: 30px !important;
+    }
+  
+    /* Adjusting copyright text */
+    footer .text-xs {
+      font-size: 12px !important;
+    }
+  }
+  

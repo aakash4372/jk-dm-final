@@ -1,0 +1,214 @@
+/* Explore Section */
+.explore-section {
+  background-color: #b1b5bc9c;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+/* Headings */
+.explore-section h2 {
+  color: #b3479a;
+  font-family: var(--fontfamily4);
+  text-align: center;
+  font-size: 56px;
+  font-weight: 700;
+}
+
+.explore-section h3 {
+  color: #2c3e50;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-family: var(--fontfamily3);
+}
+
+
+
+/* Paragraphs */
+.explore-section p {
+  color: #555;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Lead Text */
+.explore-section .lead {
+  font-size: 20px;
+}
+
+/* Video & Image Container */
+.ratio {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background: #000;
+}
+
+.ratio:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.bubbles-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0; /* Send bubbles to the background */
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: float infinite ease-in-out;
+  z-index: -1; /* Ensures bubbles stay behind */
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+/* Ensure content stays in front */
+.explore-section {
+  position: relative;
+  z-index: 1 !important; /* Bring the content forward */
+}
+
+
+/* Media Elements */
+.object-fit-cover {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s ease;
+}
+
+/* Content Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-animate {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Large Desktops */
+@media (max-width: 1200px) {
+  .explore-section {
+    padding: 70px 0;
+  }
+  
+  .explore-section h2 {
+    font-size: 48px;
+  }
+  
+  .explore-section h3 {
+    font-size: 26px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 991px) {
+  .explore-section {
+    padding: 60px 0;
+  }
+  
+  .explore-section h2 {
+    font-size: 42px;
+    margin-bottom: 30px;
+  }
+  
+  .explore-section h3 {
+    font-size: 24px;
+  }
+  
+  .explore-section p {
+    font-size: 17px;
+  margin-bottom: 18px;
+  }
+  
+  .explore-section .lead {
+    font-size: 19px;
+  }
+  
+  .ratio {
+    margin-bottom: 30px;
+  }
+}
+
+/* Small Tablets & Large Phones */
+@media (max-width: 767px) {
+  .explore-section {
+    padding: 50px 0;
+  }
+  
+  .explore-section h2 {
+    font-size: 36px;
+    margin-bottom: 25px;
+  }
+  
+  .explore-section h2::after {
+    width: 60px;
+    margin-top: 12px;
+  }
+  
+  .explore-section h3 {
+    font-size: 22px;
+  }
+  
+  .explore-section p {
+    font-size: 16px;
+  }
+  
+  .explore-section .lead {
+    font-size: 18px;
+  }
+  
+  .ratio {
+    border-radius: 10px;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 425px) {
+  .explore-section h2 {
+    font-size: 25px;
+  }
+  
+  .explore-section h3 {
+    font-size: 18px;
+  }
+  
+  .explore-section p {
+    font-size: 14px;
+  }
+  
+  .explore-section .lead {
+    font-size: 16px;
+  }
+}

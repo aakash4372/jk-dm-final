@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { motion, useInView } from "framer-motion";
+import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./css/Whatwedo.css";
@@ -36,9 +37,11 @@ const FallingText = ({ words = [], highlightClass = "highlighted" }) => {
               duration: 1,
               delay: index * 0.1,
               ease: "easeOut",
-            }}
+            }} 
           >
-            {word}
+              <Link to="/services" className="falling-text-link">
+              {word}
+            </Link>
           </motion.div>
         );
       })}
@@ -109,7 +112,7 @@ const Whatwedo = () => {
         </Row>
 
         {/* Falling Text Animation */}
-        <FallingText
+        <FallingText 
           words={[
             "GRAPHIC DESIGNING",
             "VIDEO EDITING",
